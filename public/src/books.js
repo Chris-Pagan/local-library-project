@@ -19,7 +19,19 @@ function partitionBooksByBorrowedStatus(books) {
   return [booksBorrowed, booksReturned];
 }
 
-function getBorrowersForBook(book, accounts) {}
+function getBorrowersForBook(book, accounts) {
+  let bookBorrowers = [];
+  for (let i = 0; i < book.borrows.length; i++){
+    for (let j=0; j< accounts.length; j++){
+      if (book.borrows[i].id === accounts[j].id){
+        const result = {...book.borrows[i], ...accounts[j]}
+        bookBorrowers.push(result);
+      }
+    }
+  }
+  bookBorrowers.splice(10);
+  return bookBorrowers;
+}
 
 module.exports = {
   findAuthorById,
