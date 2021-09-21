@@ -6,7 +6,9 @@ function sortAccountsByLastName(accounts) {
 
 }
 
-function getTotalNumberOfBorrows(account, books) {}
+function getTotalNumberOfBorrows(account, books) {
+  
+}
 
 function getBooksPossessedByAccount(account, books, authors) {}
 
