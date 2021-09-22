@@ -18,7 +18,14 @@ function getTotalNumberOfBorrows(account, books) {
     return numberOfBorrows;
 }
 
-function getBooksPossessedByAccount(account, books, authors) {}
+function getBooksPossessedByAccount(account, books, authors) {
+  let booksPossessed = [];
+  for (let i = 0; i < account.borrows.length; i++){
+    for (let j=0; j < books.length; j++){
+      
+    }
+  }
+}
 
 module.exports = {
   findAccountById,
