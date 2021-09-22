@@ -1,13 +1,15 @@
-//helper function
+//****HELPER FUNCTION****
 function reduceArray(arr){
   return arr.reduce((counter, index) => counter += 1, 0);
 }
 
 function getTotalBooksCount(books) {
+  //CALLS HELPER FUNCTION REDUCEARRAY FROM LINES 1-4
   return reduceArray(books);
 }
 
 function getTotalAccountsCount(accounts) {
+  //CALLS HELPER FUNCTION REDUCEARRAY FROM LINES 1-4
   return reduceArray(accounts);
 }
 
