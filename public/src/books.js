@@ -17,7 +17,6 @@ function partitionBooksByBorrowedStatus(books) {
     }
   }
   return [booksBorrowed, booksReturned];
-  
 }
 
 function getBorrowersForBook(book, accounts) {
