@@ -1,3 +1,4 @@
+//helper function
 function reduceArray(arr){
   return arr.reduce((counter, index) => counter += 1, 0);
 }
