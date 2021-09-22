@@ -1,9 +1,13 @@
+function reduceArray(arr){
+  return arr.reduce((counter, index) => counter += 1, 0);
+}
+
 function getTotalBooksCount(books) {
-  return books.length;
+  return reduceArray(books);
 }
 
 function getTotalAccountsCount(accounts) {
-  return accounts.length;
+  return reduceArray(accounts);
 }
 
 function getBooksBorrowedCount(books) {
