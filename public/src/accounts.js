@@ -9,7 +9,7 @@ function sortAccountsByLastName(accounts) {
 function getTotalNumberOfBorrows(account, books) {
   let numberOfBorrows = 0;
     for (let i = 0; i < books.length; i++) {
-      for (let j = 0; j < books[i].length; j++){
+      for (let j = 0; j < books[i].borrows.length; j++){
         if (account.id === books[i].borrows[j].id){
           numberOfBorrows++;
         }
@@ -19,12 +19,16 @@ function getTotalNumberOfBorrows(account, books) {
 }
 
 function getBooksPossessedByAccount(account, books, authors) {
-  let booksPossessed = [];
-  for (let i = 0; i < account.borrows.length; i++){
-    for (let j=0; j < books.length; j++){
-      
+  let checkedOutBooks = books.filter((book) => book.borrows[0].returned === false);
+  let accountBooks = checkedOutBooks.filter((book) => book.borrows[0].id === account.id);
+  for (let i = 0; i < accountBooks.length; i++){
+    for (let j = 0; j < authors.length; j++){
+      if (accountBooks[i].authorId === authors[j].id){
+        accountBooks[i].author = authors[j];
+      }
     }
   }
+  return accountBooks;
 }
 
 module.exports = {
